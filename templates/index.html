@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="d-flex justify-content-center my-5">
+        <div class="text-center p-4" style="max-width: 400px; width: 100%; background: rgba(245, 222, 179, 0.85); border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
+            <h1>Welcome to the Cafe Guide</h1>
+            <a class="btn btn-primary mx-2 mt-3" href="{{ url_for('add_cafe') }}">Add New Cafe</a>
+            <a class="btn btn-secondary mx-2 mt-3" href="{{ url_for('get_all_cafe') }}">View All Cafes</a>
+        </div>
+    </div>
+{% endblock %}

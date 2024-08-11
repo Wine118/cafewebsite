@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4" style="color: #C4A484;">Cafes</h1>
+    <div class="row">
+        {% for cafe in cafes %}
+            <div class="col-md-4 mb-4">
+                <div class="card" style="background-color: #f8f9fa; border: 1px solid #ddd;">
+                    <img src="{{ cafe.img_url }}" class="card-img-top" alt="{{ cafe.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #333;">{{ cafe.name }}</h5>
+                        <p class="card-text" style="color: #555;">
+                            Location: {{ cafe.location }}<br>
+                            Seats: {{ cafe.seats }}<br>
+                            Has Wi-Fi: {{ cafe.has_wifi | yesno }}<br>
+                            Has Sockets: {{ cafe.has_sockets | yesno }}<br>
+                            Has Toilet: {{ cafe.has_toilet | yesno }}<br>
+                            Can Take Calls: {{ cafe.can_take_calls | yesno }}<br>
+                            Coffee Price: {{ cafe.coffee_price }}
+                        </p>
+                        <a href="{{ cafe.map_url }}" class="btn btn-primary" target="_blank">View on Map</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

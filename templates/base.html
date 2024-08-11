@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Guide</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            background-blend-mode: darken;
+            background-color: rgba(193, 154, 107, 0.5); /* Beige overlay with opacity */
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Georgia', serif; /* Classic serif font */
+            color: #3e2723; /* Dark brown text color */
+        }
+    
+        .container {
+            padding: 20px;
+            /* Remove or comment out this line to eliminate the larger beige square */
+            /* background: rgba(245, 222, 179, 0.85); */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .navbar {
+            background-color: rgba(139, 69, 19, 0.9); /* SaddleBrown color for the navbar */
+            border-bottom: 3px solid #8b4513; /* Darker brown border */
+        }
+    
+        .navbar-brand {
+            color: #ffffff !important; /* White text for the brand name */
+            font-family: 'Georgia', serif; /* Same classic font */
+            font-size: 1.5rem;
+        }
+    
+        h1, h5 {
+            color: #3e2723; /* Dark brown text color for headings */
+        }
+    
+        a.btn {
+            background-color: #8b4513; /* SaddleBrown button background */
+            color: #ffffff !important; /* White text */
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+    
+        a.btn:hover {
+            background-color: #a0522d; /* Slightly lighter brown on hover */
+        }
+    </style>
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Cafe Guide</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- Bootstrap JS and dependencies (Popper.js) -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

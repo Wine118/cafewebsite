@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container p-4" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h1 class="text-center mb-4" style="color: #333;">Add a New Cafe</h1>
+        <form method="POST" action="{{ url_for('add_cafe') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.name.label(class="form-label", style="color: #333;") }}
+                {{ form.name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.map_url.label(class="form-label", style="color: #333;") }}
+                {{ form.map_url(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.img_url.label(class="form-label", style="color: #333;") }}
+                {{ form.img_url(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.location.label(class="form-label", style="color: #333;") }}
+                {{ form.location(class="form-control") }}
+            </div>
+            <div class="form-group form-check">
+                {{ form.has_sockets(class="form-check-input", id="has_sockets") }}
+                {{ form.has_sockets.label(class="form-check-label", for="has_sockets", style="color: #333;") }}
+            </div>
+            <div class="form-group form-check">
+                {{ form.has_toilet(class="form-check-input", id="has_toilet") }}
+                {{ form.has_toilet.label(class="form-check-label", for="has_toilet", style="color: #333;") }}
+            </div>
+            <div class="form-group form-check">
+                {{ form.has_wifi(class="form-check-input", id="has_wifi") }}
+                {{ form.has_wifi.label(class="form-check-label", for="has_wifi", style="color: #333;") }}
+            </div>
+            <div class="form-group form-check">
+                {{ form.can_take_calls(class="form-check-input", id="can_take_calls") }}
+                {{ form.can_take_calls.label(class="form-check-label", for="can_take_calls", style="color: #333;") }}
+            </div>
+            <div class="form-group">
+                {{ form.seats.label(class="form-label", style="color: #333;") }}
+                {{ form.seats(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.coffee_price.label(class="form-label", style="color: #333;") }}
+                {{ form.coffee_price(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-success">Add Cafe</button>
+        </form>
+    </div>
+{% endblock %}
